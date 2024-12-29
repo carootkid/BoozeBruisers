@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
     public string itemName = "";
     public string itemDesc = "";
+    public TMP_Text ZonkMeterText;
     public TMP_Text leafLubberText;
     public TMP_Text triggerSappyText;
     public TMP_Text mightyMoonshineText;
@@ -15,11 +16,15 @@ public class Item : MonoBehaviour
     void Start()
     {
         zonkManager = FindObjectOfType<ZonkManager>();
+        zonkManager.ZonkLevel = 0f;
 
         if (leafLubberText != null) leafLubberText.gameObject.SetActive(false);
         if (triggerSappyText != null) triggerSappyText.gameObject.SetActive(false);
         if (mightyMoonshineText != null) mightyMoonshineText.gameObject.SetActive(false);
         if (houseFireText != null) houseFireText.gameObject.SetActive(false);
+    }
+    private void Update(){
+        ZonkMeterText.text = "Zonk Meter :" + zonkManager.ZonkLevel;
     }
 
     public void Click()
@@ -27,22 +32,22 @@ public class Item : MonoBehaviour
         if (itemName == "Leaf Lubber")
         {
             Debug.Log("Clicked Leaf Lubber");
-            zonkManager.ZonkLevel += 10;
+            zonkManager.ZonkLevel += 10f;
         }
         else if (itemName == "Trigger Sappy")
         {
             Debug.Log("Clicked Trigger Sappy");
-            zonkManager.ZonkLevel += 20;
+            zonkManager.ZonkLevel += 20f;
         }
         else if (itemName == "Mighty Moonshine")
         {
             Debug.Log("Clicked Mighty Moonshine");
-            zonkManager.ZonkLevel += 30;
+            zonkManager.ZonkLevel += 30f;
         }
         else if (itemName == "House Fire")
         {
             Debug.Log("Clicked House Fire");
-            zonkManager.ZonkLevel += 50;
+            zonkManager.ZonkLevel += 50f;
         }
     }
 
