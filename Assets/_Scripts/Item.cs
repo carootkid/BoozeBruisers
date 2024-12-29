@@ -49,5 +49,10 @@ public class Item : MonoBehaviour
             Debug.Log("Clicked House Fire");
             zonkManager.ZonkLevel += 50;
         }
+
+        if (itemName == "Tarot Cards")
+        {
+            Debug.Log("Clicked Tarot Cards");
+        }
     }
 }
