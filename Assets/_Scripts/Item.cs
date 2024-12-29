@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
     public TMP_Text triggerSappyText;
     public TMP_Text mightyMoonshineText;
     public TMP_Text houseFireText;
+    public TMP_Text TarotCardText;
     public ZonkManager zonkManager;
 
     void Start()
@@ -48,6 +49,8 @@ public class Item : MonoBehaviour
         {
             Debug.Log("Clicked House Fire");
             zonkManager.ZonkLevel += 50f;
+        }else if(itemName == "Tarot Cards"){
+            Debug.Log("Clicked Tarot Cards");
         }
     }
 
@@ -72,6 +75,11 @@ public class Item : MonoBehaviour
         {
             houseFireText.gameObject.SetActive(show);
             if (show) houseFireText.text = itemDesc;
+
+        }else if (itemName == "Tarot Cards" && TarotCardText != null)
+        {
+            TarotCardText.gameObject.SetActive(show);
+            if (show) TarotCardText.text = itemDesc;
         }
     }
 }
