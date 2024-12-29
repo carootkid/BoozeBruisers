@@ -11,18 +11,16 @@ public class ItemSelect : MonoBehaviour
     public Transform hitLocation;
     public Camera camera;
 
-    private bool isHover;
+    private Item currentHoveredItem = null;
 
     void Update()
     {
-        // Check for collisions when the mouse is over an item
         CheckItemCollision();
 
-        if(Input.GetMouseButtonDown(0)){
-            Debug.Log("Clicked");
+        if (Input.GetMouseButtonDown(0) && currentHoveredItem != null)
+        {
+            currentHoveredItem.Click();
         }
-
-        
     }
 
     private void CheckItemCollision()
@@ -35,18 +33,32 @@ public class ItemSelect : MonoBehaviour
             hitLocation.position = hit.point;
             if (hit.collider.CompareTag("Clickable"))
             {
-                Item clickScript = hit.collider.GetComponent<Item>();
-                if(Input.GetMouseButtonDown(0) && clickScript != null)
+                Item hoverScript = hit.collider.GetComponent<Item>();
+                if (hoverScript != null)
                 {
-                    clickScript.Click();
+                    hoverScript.ShowDescription(true);
+                    currentHoveredItem = hoverScript;
                 }
                 Cursor.SetCursor(cursorTextureHover, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
-            } else {
-                Cursor.SetCursor(cursorTextureNormal, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
             }
-        } else
-        {
-            Cursor.SetCursor(cursorTextureNormal, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
+            else
+            {
+                ResetHover();
+            }
         }
+        else
+        {
+            ResetHover();
+        }
+    }
+
+    private void ResetHover()
+    {
+        if (currentHoveredItem != null)
+        {
+            currentHoveredItem.ShowDescription(false);
+            currentHoveredItem = null;
+        }
+        Cursor.SetCursor(cursorTextureNormal, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
     }
 }
