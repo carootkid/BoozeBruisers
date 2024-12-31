@@ -6,11 +6,7 @@ public class Item : MonoBehaviour
 {
     public string itemName = "";
     public string itemDesc = "";
-    public TMP_Text ZonkMeterText;
-    public TMP_Text leafLubberText;
-    public TMP_Text triggerSappyText;
-    public TMP_Text mightyMoonshineText;
-    public TMP_Text houseFireText;
+    public TMP_Text ItemText;
     public TMP_Text TarotCardText;
     public ZonkManager zonkManager;
     public TurnManager turnManager;
@@ -26,19 +22,15 @@ public class Item : MonoBehaviour
         turnManager.PlayerOneTurn = true;
 
         //Turns off the text for the basic UI stuff as long as it exists
-        if (leafLubberText != null) leafLubberText.gameObject.SetActive(false);
-        if (triggerSappyText != null) triggerSappyText.gameObject.SetActive(false);
-        if (mightyMoonshineText != null) mightyMoonshineText.gameObject.SetActive(false);
-        if (houseFireText != null) houseFireText.gameObject.SetActive(false);
-        if (TarotCardText!= null) TarotCardText.gameObject.SetActive(false);
+        if (ItemText != null) ItemText.gameObject.SetActive(false);
     }
     private void Update(){
         if(turnManager.PlayerOneTurn)
         {
-            ZonkMeterText.text = "Zonk Level: " + zonkManager.PlayerOneZonkLevel;
+            zonkManager.zonkText.text = "Zonk Level: " + zonkManager.PlayerOneZonkLevel;
         }else
         {
-            ZonkMeterText.text = "Zonk Level: " + zonkManager.PlayerTwoZonkLevel;
+            zonkManager.zonkText.text = "Zonk Level: " + zonkManager.PlayerTwoZonkLevel;
         }
     }
 
@@ -116,30 +108,30 @@ public class Item : MonoBehaviour
     public void ShowDescription(bool show)
     {
         //shows the description of the stuff when you hover over it and makes it so the text equals whatever is the item description
-        if (itemName == "Leaf Lubber" && leafLubberText != null)
+        if (itemName == "Leaf Lubber" && ItemText != null)
         {
-            leafLubberText.gameObject.SetActive(show);
-            if (show) leafLubberText.text = itemDesc;
+            ItemText.gameObject.SetActive(show);
+            if (show) ItemText.text = itemDesc;
         }
-        else if (itemName == "Trigger Sappy" && triggerSappyText != null)
+        else if (itemName == "Trigger Sappy" && ItemText != null)
         {
-            triggerSappyText.gameObject.SetActive(show);
-            if (show) triggerSappyText.text = itemDesc;
+            ItemText.gameObject.SetActive(show);
+            if (show) ItemText.text = itemDesc;
         }
-        else if (itemName == "Mighty Moonshine" && mightyMoonshineText != null)
+        else if (itemName == "Mighty Moonshine" && ItemText != null)
         {
-            mightyMoonshineText.gameObject.SetActive(show);
-            if (show) mightyMoonshineText.text = itemDesc;
+            ItemText.gameObject.SetActive(show);
+            if (show) ItemText.text = itemDesc;
         }
-        else if (itemName == "House Fire" && houseFireText != null)
+        else if (itemName == "House Fire" && ItemText != null)
         {
-            houseFireText.gameObject.SetActive(show);
-            if (show) houseFireText.text = itemDesc;
+            ItemText.gameObject.SetActive(show);
+            if (show) ItemText.text = itemDesc;
 
-        }else if (itemName == "Tarot Cards" && TarotCardText != null)
+        }else if (itemName == "Tarot Cards" && ItemText != null)
         {
-            TarotCardText.gameObject.SetActive(show);
-            if (show) TarotCardText.text = itemDesc;
+            ItemText.gameObject.SetActive(show);
+            if (show) ItemText.text = itemDesc;
         }
     }
 }
