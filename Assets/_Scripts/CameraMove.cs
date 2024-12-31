@@ -1,45 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class CameraRotate : MonoBehaviour
 {
     public float rotationAngle = 15f;
-    public float edgeThreshold = 0.9f; 
-    public float smoothSpeed = 5f; 
+    public float edgeThreshold = 0.9f;
+    public float smoothSpeed = 5f;
+    public float turnCooldown = 0.5f; 
 
     private Quaternion defaultRotation; 
     private Quaternion rightRotation;
-    private Quaternion targetRotation; 
+    private Quaternion leftRotation; 
+    private Quaternion targetRotation;
+
+    private float cooldownTimer = 0f;
 
     void Start()
     {
-        
         defaultRotation = transform.rotation;
 
-        //makes the camera move to the right a certain amount amount and angle shit i dont care about because i looked up how to move it right!!!!!!!!
         rightRotation = Quaternion.Euler(
             defaultRotation.eulerAngles.x,
             defaultRotation.eulerAngles.y + rotationAngle,
             defaultRotation.eulerAngles.z
         );
-        //RETREAT!!!!!!!!!!!!!!!!
+
+        leftRotation = Quaternion.Euler(
+            defaultRotation.eulerAngles.x,
+            defaultRotation.eulerAngles.y - rotationAngle,
+            defaultRotation.eulerAngles.z
+        );
+
         targetRotation = defaultRotation;
     }
 
     void Update()
     {
-        float mouseX = Input.mousePosition.x / Screen.width;
+        cooldownTimer -= Time.deltaTime;
 
-        if (mouseX > edgeThreshold)
+        if (cooldownTimer <= 0)
         {
-            targetRotation = rightRotation;
+            float mouseX = Input.mousePosition.x / Screen.width;
+
+            if (mouseX > edgeThreshold)
+            {
+                targetRotation = rightRotation;
+                cooldownTimer = turnCooldown;
+            }
+            else if (mouseX < 1 - edgeThreshold)
+            {
+                targetRotation = leftRotation;
+                cooldownTimer = turnCooldown;
+            }
         }
-        
-        else if (mouseX < 1 - edgeThreshold)
-        {
-            targetRotation = defaultRotation;
-        }
-        //move the dinglebob
+
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
     }
 }
