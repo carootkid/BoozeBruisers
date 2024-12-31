@@ -1061,11 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Player One
   itemDesc: Punch this fucker
-  ZonkMeterText: {fileID: 1488434960}
-  leafLubberText: {fileID: 1229910259}
-  triggerSappyText: {fileID: 1294755835}
-  mightyMoonshineText: {fileID: 688163483}
-  houseFireText: {fileID: 1685122021}
+  ItemText: {fileID: 0}
   TarotCardText: {fileID: 604793649}
   zonkManager: {fileID: 1742538685}
   turnManager: {fileID: 1742538687}
@@ -1333,11 +1329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Player Two
   itemDesc: Punch this fucker
-  ZonkMeterText: {fileID: 1488434960}
-  leafLubberText: {fileID: 1229910259}
-  triggerSappyText: {fileID: 1294755835}
-  mightyMoonshineText: {fileID: 688163483}
-  houseFireText: {fileID: 1685122021}
+  ItemText: {fileID: 0}
   TarotCardText: {fileID: 604793649}
   zonkManager: {fileID: 1742538685}
   turnManager: {fileID: 1742538687}
@@ -2021,6 +2013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerOneZonkLevel: 0
   PlayerTwoZonkLevel: 0
+  zonkText: {fileID: 0}
 --- !u!4 &1742538686
 Transform:
   m_ObjectHideFlags: 0
@@ -2165,11 +2158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tarot Cards
   itemDesc: TAROT CARDS!
-  ZonkMeterText: {fileID: 1488434960}
-  leafLubberText: {fileID: 1229910259}
-  triggerSappyText: {fileID: 1294755835}
-  mightyMoonshineText: {fileID: 688163483}
-  houseFireText: {fileID: 1685122021}
+  ItemText: {fileID: 0}
   TarotCardText: {fileID: 604793649}
   zonkManager: {fileID: 1742538685}
   turnManager: {fileID: 0}
@@ -2382,6 +2371,7 @@ MonoBehaviour:
   rotationAngle: 30
   edgeThreshold: 0.9
   smoothSpeed: 5
+  turnCooldown: 0.5
 --- !u!114 &1869850154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3114,6 +3104,7 @@ MonoBehaviour:
   rotationAngle: 15
   edgeThreshold: 0.9
   smoothSpeed: 5
+  turnCooldown: 0.5
 --- !u!1 &2110758004
 GameObject:
   m_ObjectHideFlags: 0
