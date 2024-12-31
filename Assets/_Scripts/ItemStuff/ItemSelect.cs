@@ -38,7 +38,7 @@ public class ItemSelect : MonoBehaviour
                 Item hoverScript = hit.collider.GetComponent<Item>();
                 if (hoverScript != null)
                 {
-                    hoverScript.ShowDescription(true);
+                    hoverScript.ResetAlpha();
                     currentHoveredItem = hoverScript;
                 }
                 Cursor.SetCursor(cursorTextureHover, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
@@ -56,11 +56,6 @@ public class ItemSelect : MonoBehaviour
 
     private void ResetHover()
     {
-        if (currentHoveredItem != null)
-        {
-            currentHoveredItem.ShowDescription(false);
-            currentHoveredItem = null;
-        }
         Cursor.SetCursor(cursorTextureNormal, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
     }
 }

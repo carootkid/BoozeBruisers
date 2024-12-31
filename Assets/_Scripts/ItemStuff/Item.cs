@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
     public TMP_Text TarotCardText;
     public ZonkManager zonkManager;
     public TurnManager turnManager;
+    private float alpha = 0f;
 
     void Start()
     {
@@ -21,8 +22,10 @@ public class Item : MonoBehaviour
         turnManager = FindObjectOfType<TurnManager>();
         turnManager.PlayerOneTurn = true;
 
+        ItemText.text = itemName;
+
         //Turns off the text for the basic UI stuff as long as it exists
-        if (ItemText != null) ItemText.gameObject.SetActive(false);
+        //if (ItemText != null) ItemText.gameObject.SetActive(false);
     }
     private void Update(){
         if(turnManager.PlayerOneTurn)
@@ -31,6 +34,17 @@ public class Item : MonoBehaviour
         }else
         {
             zonkManager.zonkText.text = "Zonk Level: " + zonkManager.PlayerTwoZonkLevel;
+        }
+    }
+
+    private void FixedUpdate() 
+    {
+        alpha = Mathf.Lerp(alpha, 0, Time.deltaTime * 5);
+
+        if (ItemText != null)
+        {
+            ItemText.overrideColorTags = true;
+            ItemText.color = new Color(1f, 1f, 1f, alpha);
         }
     }
 
@@ -133,5 +147,11 @@ public class Item : MonoBehaviour
             ItemText.gameObject.SetActive(show);
             if (show) ItemText.text = itemDesc;
         }
+    }
+
+    public void ResetAlpha()
+    {
+        alpha = 1f;
+        Debug.Log("resetAlpha");
     }
 }
