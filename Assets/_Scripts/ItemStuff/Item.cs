@@ -68,6 +68,11 @@ public class Item : MonoBehaviour
             Debug.Log("Punching Player Two");
             turnManager.PlayerOneTurn = false;
         }
+        else if (itemName == "Player One")
+        {
+            Debug.Log("Punching Player One");
+            turnManager.PlayerOneTurn = true;
+        }
     }
 
     public void ShowDescription(bool show)

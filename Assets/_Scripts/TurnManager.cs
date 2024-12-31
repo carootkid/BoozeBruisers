@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public bool PlayerOneTurn;
+    public bool PlayerOneTurn;          
+    public GameObject PlayerOneCamera;
+    public GameObject PlayerTwoCamera; 
 
     void Start()
     {
-        
+
+        UpdateCameraState();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+        UpdateCameraState();
+    }
+
+    private void UpdateCameraState()
+    {
+      
+        PlayerOneCamera.SetActive(PlayerOneTurn);
+        PlayerTwoCamera.SetActive(!PlayerOneTurn);
     }
 }
