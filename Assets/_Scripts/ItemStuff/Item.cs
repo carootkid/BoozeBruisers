@@ -19,7 +19,8 @@ public class Item : MonoBehaviour
     {
         //Finds zonk manager and sets zonk level to 0 (NEED TO CHANGE WITH TURN SYSTEM : need to make zonk level on a player by player basis)
         zonkManager = FindObjectOfType<ZonkManager>();
-        zonkManager.ZonkLevel = 0f;
+        zonkManager.PlayerOneZonkLevel = 0f;
+        zonkManager.PlayerTwoZonkLevel = 0f;
         //Finds turn manager and sets it to player ones turn first (NEED TO CHANGE WITH TURN SYSTEM : coin flip for who starts)
         turnManager = FindObjectOfType<TurnManager>();
         turnManager.PlayerOneTurn = true;
@@ -32,8 +33,13 @@ public class Item : MonoBehaviour
         if (TarotCardText!= null) TarotCardText.gameObject.SetActive(false);
     }
     private void Update(){
-        //Makes zonk meter gooder
-        ZonkMeterText.text = "Zonk Meter :" + zonkManager.ZonkLevel;
+        if(turnManager.PlayerOneTurn)
+        {
+            ZonkMeterText.text = "Zonk Level: " + zonkManager.PlayerOneZonkLevel;
+        }else
+        {
+            ZonkMeterText.text = "Zonk Level: " + zonkManager.PlayerTwoZonkLevel;
+        }
     }
 
     public void Click()
@@ -42,22 +48,54 @@ public class Item : MonoBehaviour
         if (itemName == "Leaf Lubber")
         {
             Debug.Log("Clicked Leaf Lubber");
-            zonkManager.ZonkLevel += 10f;
+
+            if(turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerOneZonkLevel += 10f;   
+            }
+            else if (!turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerTwoZonkLevel += 10f;
+            }
+            
         }
         else if (itemName == "Trigger Sappy")
         {
             Debug.Log("Clicked Trigger Sappy");
-            zonkManager.ZonkLevel += 20f;
+            if(turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerOneZonkLevel += 20f;   
+            }
+            else if (!turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerTwoZonkLevel += 20f;
+            }
+            
         }
         else if (itemName == "Mighty Moonshine")
         {
             Debug.Log("Clicked Mighty Moonshine");
-            zonkManager.ZonkLevel += 30f;
+            if(turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerOneZonkLevel += 30f;   
+            }
+            else if (!turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerTwoZonkLevel += 30f;
+            }
         }
         else if (itemName == "House Fire")
         {
             Debug.Log("Clicked House Fire");
-            zonkManager.ZonkLevel += 50f;
+            if(turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerOneZonkLevel += 50f;   
+            }
+            else if (!turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerTwoZonkLevel += 50f;
+            }
+
         }
         else if(itemName == "Tarot Cards")
         {

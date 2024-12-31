@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ZonkManager : MonoBehaviour
 {
-    public float ZonkLevel = 0f;
+    public float PlayerOneZonkLevel = 0f;
+    public float PlayerTwoZonkLevel = 0f;
 
     void Start()
     {
-        ZonkLevel = 0f;
+        PlayerOneZonkLevel = 0f;
+        PlayerTwoZonkLevel = 0f;
     }
 
     void Update()
