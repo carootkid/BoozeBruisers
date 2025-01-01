@@ -14,6 +14,9 @@ public class Item : MonoBehaviour
     public ZonkManager zonkManager;
     public TurnManager turnManager;
     public CardManager cardManager;
+
+    [Header("Animator (ONLY FOR PLAYERS)")]
+    public Animator playerAnimator;
     private float alpha = 0f;
 
 
@@ -123,12 +126,24 @@ public class Item : MonoBehaviour
         else if (itemName == "Player Two")
         {
             Debug.Log("Punching Player Two");
-            turnManager.PlayerOneTurn = false;
+
+            turnManager.punching = true;
+
+            float randPunch = Random.Range(0,100);
+            Debug.Log(randPunch);
+            playerAnimator.SetFloat("Strength", randPunch);
+            playerAnimator.SetTrigger("Left");
         }
         else if (itemName == "Player One")
         {
             Debug.Log("Punching Player One");
-            turnManager.PlayerOneTurn = true;
+
+            turnManager.punching = true;
+
+            float randPunch = Random.Range(0,100);
+            Debug.Log(randPunch);
+            playerAnimator.SetFloat("Strength", randPunch);
+            playerAnimator.SetTrigger("Right");
         }
     }
 

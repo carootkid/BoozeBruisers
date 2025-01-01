@@ -13,6 +13,7 @@ public class ItemSelect : MonoBehaviour
     public Transform hitLocation;
     public Camera camera;
 
+
     private Item currentHoveredItem = null;
 
     void Update()
