@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 43e7a6a9282bddc439e7a43515472b1c
+guid: 8e4c8efa888e04447b96d041eda28eae
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CORK!!
-    second: {fileID: 2100000, guid: 460ec7c66d61f654e8ed7ced7f63d755, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TriggerSappyBody
-    second: {fileID: 2100000, guid: fcf492482bb137d4aa74429a853cf3dc, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
