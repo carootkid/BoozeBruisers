@@ -4,13 +4,18 @@ using UnityEngine;
 using TMPro;
 public class Item : MonoBehaviour
 {
+    [Header("Item Stuff")]
     public string itemName = "";
     public string itemDesc = "";
     public TMP_Text ItemText;
     public TMP_Text TarotCardText;
+
+    [Header("Game Management")]
     public ZonkManager zonkManager;
     public TurnManager turnManager;
     private float alpha = 0f;
+
+
 
     void Start()
     {
@@ -106,6 +111,7 @@ public class Item : MonoBehaviour
         else if(itemName == "Tarot Cards")
         {
             Debug.Log("Clicked Tarot Cards");
+
         }
         else if (itemName == "Player Two")
         {
@@ -154,4 +160,5 @@ public class Item : MonoBehaviour
         alpha = 1f;
         Debug.Log("resetAlpha");
     }
+
 }
