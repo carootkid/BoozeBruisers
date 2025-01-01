@@ -24,6 +24,10 @@ public class ItemSelect : MonoBehaviour
         {
             currentHoveredItem.Click();
         }
+
+        if(Input.GetMouseButton(0)){
+            Cursor.SetCursor(cursorTextureNormal, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
+        }
     }
 
     private void CheckItemCollision()

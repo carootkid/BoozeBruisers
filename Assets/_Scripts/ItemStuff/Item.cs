@@ -131,6 +131,8 @@ public class Item : MonoBehaviour
 
             float randPunch = Random.Range(0,100);
             Debug.Log(randPunch);
+            randPunch = randPunch / 100;
+            Debug.Log(randPunch);
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
         }
