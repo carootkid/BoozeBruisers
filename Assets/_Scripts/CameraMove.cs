@@ -15,6 +15,7 @@ public class CameraRotate : MonoBehaviour
     private Quaternion targetRotation;
 
     private float cooldownTimer = 0f;
+    private string lastDirection = "middle"; 
 
     void Start()
     {
@@ -45,16 +46,37 @@ public class CameraRotate : MonoBehaviour
 
             if (mouseX > edgeThreshold)
             {
-                targetRotation = rightRotation;
+                if (lastDirection == "left")
+                {
+                    targetRotation = defaultRotation;
+                }
+                else
+                {
+                    targetRotation = rightRotation;
+                }
+                lastDirection = "right";
                 cooldownTimer = turnCooldown;
             }
             else if (mouseX < 1 - edgeThreshold)
             {
-                targetRotation = leftRotation;
+                if (lastDirection == "right")
+                {
+                    targetRotation = defaultRotation;
+                }
+                else
+                {
+                    targetRotation = leftRotation;
+                }
+                lastDirection = "left";
                 cooldownTimer = turnCooldown;
             }
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
+
+        if (Quaternion.Angle(transform.rotation, defaultRotation) < 0.1f && targetRotation == defaultRotation)
+        {
+            lastDirection = "middle";
+        }
     }
 }
