@@ -12,10 +12,7 @@ public class Card
     // Name the cards and what they do when drawn
     public void CardEffect()
     {
-        if (cardName == "Judgement Pistols")
-        {
-            Debug.Log("Judgement pistols cuh");
-        }
+
     }
 }
 
@@ -45,6 +42,8 @@ public class CardManager : MonoBehaviour
         }
 
         int randomNumber = Random.Range(0, totalWeight);
+        Debug.Log("Random Number:" + randomNumber);
+        Debug.Log("The total weight is:" + totalWeight);
 
         foreach (Card card in cardList)
         {
@@ -57,6 +56,8 @@ public class CardManager : MonoBehaviour
 
         Debug.LogError("Failed to draw a card.");
         return null;
+        //To try and explain how it works basically it adds up all the cards weighting together to get a range (0 - whatever the total card weighting is)
+        //then it picks a random number and if that number is within a range of a card it picks that card, like if ones weighting was 10, every number from 0-9 could be chosen for it
     }
 
     private void Start()//debugging to test card drawing

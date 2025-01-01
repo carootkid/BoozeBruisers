@@ -77,11 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 05bca94b602fbaa47aae0947917edb20, type: 2}
+      objectReference: {fileID: 2100000, guid: fe8f97fa57ee2a6409c5807cd937f93d, type: 2}
     - target: {fileID: 919132149155446097, guid: 6d23ba3ee34cf7c4292bf0a1cea7d913,
         type: 3}
       propertyPath: m_Name
-      value: AllISeeIsRed Card
+      value: Drunken Wrath Card
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6d23ba3ee34cf7c4292bf0a1cea7d913,
         type: 3}

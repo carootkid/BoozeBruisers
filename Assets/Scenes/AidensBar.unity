@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 1751587661757834997, guid: e78b7b46c9eb05c45810f0d0462b3ab5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9621954
+      value: 5.8719997
       objectReference: {fileID: 0}
     - target: {fileID: 1751587661757834997, guid: e78b7b46c9eb05c45810f0d0462b3ab5,
         type: 3}
@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 1751587661757834997, guid: e78b7b46c9eb05c45810f0d0462b3ab5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.544709
+      value: 4.5397997
       objectReference: {fileID: 0}
     - target: {fileID: 1751587661757834997, guid: e78b7b46c9eb05c45810f0d0462b3ab5,
         type: 3}
@@ -2490,7 +2490,7 @@ PrefabInstance:
     - target: {fileID: 5608128685850618563, guid: d0360163945b6b742aa4da1015efa560,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9441957
+      value: 5.854
       objectReference: {fileID: 0}
     - target: {fileID: 5608128685850618563, guid: d0360163945b6b742aa4da1015efa560,
         type: 3}
@@ -2500,7 +2500,7 @@ PrefabInstance:
     - target: {fileID: 5608128685850618563, guid: d0360163945b6b742aa4da1015efa560,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.6947093
+      value: 3.6898
       objectReference: {fileID: 0}
     - target: {fileID: 5608128685850618563, guid: d0360163945b6b742aa4da1015efa560,
         type: 3}
@@ -3974,13 +3974,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardList:
+  - cardName: AllISeeIsRed
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: a3aec957aed7ebc418ba5ddec9a8338b,
+      type: 3}
+  - cardName: Drunkify
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: 8d2e42d1e85d8d140937edef7d309cee,
+      type: 3}
   - cardName: Judgement Pistols
-    rarityWeight: 50
+    rarityWeight: 10
     cardPrefab: {fileID: 8346213286722073002, guid: 40ccf6fca5648a144b22dfea5d134629,
       type: 3}
-  - cardName: Judgement Pistols2
-    rarityWeight: 50
-    cardPrefab: {fileID: 8346213286722073002, guid: 07fffdda15a62eb47bb3d035b51ef406,
+  - cardName: The Alchoholic
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: 6038c96773b51324e943cc1f31fd09ac,
+      type: 3}
+  - cardName: The Zooted
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: cd71cb713649ee74e8f92950bcf5ff4b,
+      type: 3}
+  - cardName: The Devil
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: 12234761a2a3bbd499c4000c31bb6445,
+      type: 3}
+  - cardName: Drunken Wrath
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: 475b931b1f518544baf94288d532684c,
+      type: 3}
+  - cardName: Drunken Rage
+    rarityWeight: 10
+    cardPrefab: {fileID: 8346213286722073002, guid: 552ddaae1ee9beb488ba5a4fb3c26d32,
+      type: 3}
+  - cardName: Blank
+    rarityWeight: 20
+    cardPrefab: {fileID: 8346213286722073002, guid: 72be1477a2c3d1949bce4e9d0cc5a149,
       type: 3}
 --- !u!1 &1557082516
 GameObject:
@@ -4388,7 +4416,7 @@ PrefabInstance:
     - target: {fileID: 5532034330065877319, guid: ad43742d6ee6e574c9ef0ddeb8840c7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9351954
+      value: 5.845
       objectReference: {fileID: 0}
     - target: {fileID: 5532034330065877319, guid: ad43742d6ee6e574c9ef0ddeb8840c7e,
         type: 3}
@@ -4398,7 +4426,7 @@ PrefabInstance:
     - target: {fileID: 5532034330065877319, guid: ad43742d6ee6e574c9ef0ddeb8840c7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.2917094
+      value: 4.2868004
       objectReference: {fileID: 0}
     - target: {fileID: 5532034330065877319, guid: ad43742d6ee6e574c9ef0ddeb8840c7e,
         type: 3}
@@ -10951,7 +10979,7 @@ PrefabInstance:
     - target: {fileID: 4656912380237267133, guid: 5e742926938a36b48b879e3af0a0f6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9681954
+      value: 5.878
       objectReference: {fileID: 0}
     - target: {fileID: 4656912380237267133, guid: 5e742926938a36b48b879e3af0a0f6d3,
         type: 3}
@@ -10961,7 +10989,7 @@ PrefabInstance:
     - target: {fileID: 4656912380237267133, guid: 5e742926938a36b48b879e3af0a0f6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.8999093
+      value: 3.895
       objectReference: {fileID: 0}
     - target: {fileID: 4656912380237267133, guid: 5e742926938a36b48b879e3af0a0f6d3,
         type: 3}
