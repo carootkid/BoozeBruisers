@@ -60,17 +60,4 @@ public class CardManager : MonoBehaviour
         //then it picks a random number and if that number is within a range of a card it picks that card, like if ones weighting was 10, every number from 0-9 could be chosen for it
     }
 
-    private void Start()//debugging to test card drawing
-    {
-        Card drawnCard = DrawCard();
-        if (drawnCard != null)
-        {
-            Debug.Log($"You drew: {drawnCard.cardName}");
-            drawnCard.CardEffect(); 
-        }
-        else
-        {
-            Debug.Log("No card drawn.");
-        }
-    }
 }

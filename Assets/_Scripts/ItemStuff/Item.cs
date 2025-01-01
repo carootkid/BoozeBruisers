@@ -13,12 +13,14 @@ public class Item : MonoBehaviour
     [Header("Game Management")]
     public ZonkManager zonkManager;
     public TurnManager turnManager;
+    public CardManager cardManager;
     private float alpha = 0f;
 
 
 
     void Start()
     {
+        cardManager = FindObjectOfType<CardManager>();
         //Finds zonk manager and sets zonk level to 0 (NEED TO CHANGE WITH TURN SYSTEM : need to make zonk level on a player by player basis)
         zonkManager = FindObjectOfType<ZonkManager>();
         zonkManager.PlayerOneZonkLevel = 0f;
@@ -111,7 +113,12 @@ public class Item : MonoBehaviour
         else if(itemName == "Tarot Cards")
         {
             Debug.Log("Clicked Tarot Cards");
-
+            Card drawnCard = cardManager.DrawCard();
+            if(drawnCard != null){
+                Debug.Log($"You drew: {drawnCard.cardName}");
+            }else{
+                Debug.Log("No Card drawn");
+            }
         }
         else if (itemName == "Player Two")
         {
