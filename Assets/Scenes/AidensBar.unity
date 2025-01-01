@@ -709,6 +709,7 @@ MonoBehaviour:
   TarotCardText: {fileID: 0}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
+  cardManager: {fileID: 0}
 --- !u!65 &281454966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3379,14 +3380,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306186085}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13052596, y: -0, z: -0, w: 0.99144495}
+  m_LocalRotation: {x: 0.19607797, y: -0, z: -0, w: 0.9805884}
   m_LocalPosition: {x: -0.893, y: -0.076, z: -0.593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1660853300}
   m_Father: {fileID: 1557082517}
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.615, y: 0, z: 0}
 --- !u!114 &1306186090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3554,6 +3555,7 @@ MonoBehaviour:
   TarotCardText: {fileID: 0}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
+  cardManager: {fileID: 0}
 --- !u!1 &1467505172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,7 +4001,7 @@ MonoBehaviour:
     cardPrefab: {fileID: 8346213286722073002, guid: 12234761a2a3bbd499c4000c31bb6445,
       type: 3}
   - cardName: Drunken Wrath
-    rarityWeight: 10
+    rarityWeight: 5
     cardPrefab: {fileID: 8346213286722073002, guid: 475b931b1f518544baf94288d532684c,
       type: 3}
   - cardName: Drunken Rage
@@ -4007,8 +4009,24 @@ MonoBehaviour:
     cardPrefab: {fileID: 8346213286722073002, guid: 552ddaae1ee9beb488ba5a4fb3c26d32,
       type: 3}
   - cardName: Blank
-    rarityWeight: 20
+    rarityWeight: 5
     cardPrefab: {fileID: 8346213286722073002, guid: 72be1477a2c3d1949bce4e9d0cc5a149,
+      type: 3}
+  - cardName: The Saint
+    rarityWeight: 5
+    cardPrefab: {fileID: 8346213286722073002, guid: fb48034e03c366342a996f683111ab0b,
+      type: 3}
+  - cardName: The Pure
+    rarityWeight: 5
+    cardPrefab: {fileID: 8346213286722073002, guid: 3ac337b216f31cb4aba5360928ec2014,
+      type: 3}
+  - cardName: The Lightweight
+    rarityWeight: 5
+    cardPrefab: {fileID: 8346213286722073002, guid: f821a02b94f4e7e4fa500b4f60b7dedd,
+      type: 3}
+  - cardName: The Sober
+    rarityWeight: 5
+    cardPrefab: {fileID: 8346213286722073002, guid: c1a3999808e9a4d439a390d7c47e8ed2,
       type: 3}
 --- !u!1 &1557082516
 GameObject:
@@ -4770,14 +4788,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694780644}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99144495, z: -0.13052596, w: 0}
+  m_LocalRotation: {x: 0, y: 0.98058903, z: -0.1960744, w: 0}
   m_LocalPosition: {x: -0.871, y: -0.082, z: 0.603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1467505176}
   m_Father: {fileID: 1557082517}
-  m_LocalEulerAnglesHint: {x: 15, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.615, y: 180, z: 0}
 --- !u!114 &1694780650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4818,7 +4836,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7da392e9d1d7dff4997af5bd98dc2bc2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.143
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5042,6 +5060,7 @@ MonoBehaviour:
   TarotCardText: {fileID: 1139520932}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
+  cardManager: {fileID: 0}
 --- !u!65 &1739967969
 BoxCollider:
   m_ObjectHideFlags: 0
