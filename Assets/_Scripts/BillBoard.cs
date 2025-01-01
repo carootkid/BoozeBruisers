@@ -12,15 +12,18 @@ public class BillBoard : MonoBehaviour
         if (turnManager.PlayerOneTurn)
         {
             transform.LookAt(turnManager.PlayerOneCamera.transform.position);
+            Vector3 eulerRotation = transform.eulerAngles;
+            eulerRotation.z = turnManager.PlayerOneCamera.transform.rotation.z - 180;
+            transform.eulerAngles = eulerRotation;
         }
         else
         {
             transform.LookAt(turnManager.PlayerTwoCamera.transform.position);
+            Vector3 eulerRotation = transform.eulerAngles;
+            eulerRotation.z = turnManager.PlayerTwoCamera.transform.rotation.z - 180;
+            transform.eulerAngles = eulerRotation;
         }
 
-        // Lock the Z rotation to -270
-        Vector3 eulerRotation = transform.eulerAngles;
-        eulerRotation.z = -180f;
-        transform.eulerAngles = eulerRotation;
+        
     }
 }
