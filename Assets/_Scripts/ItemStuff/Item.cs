@@ -10,6 +10,8 @@ public class Item : MonoBehaviour
     public TMP_Text ItemText;
     public TMP_Text TarotCardText;
 
+    public GameObject TVCanvas;
+
     [Header("Game Management")]
     public ZonkManager zonkManager;
     public TurnManager turnManager;
@@ -149,6 +151,14 @@ public class Item : MonoBehaviour
             playerManager.strength = randPunch;
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Right");
+        }else if (itemName == "Box TV")
+        {
+            Debug.Log("Turning on TV");
+            if(TVCanvas.activeSelf){
+                TVCanvas.SetActive(false);
+            }else{
+                TVCanvas.SetActive(true);
+            }
         }
     }
 
@@ -187,5 +197,6 @@ public class Item : MonoBehaviour
         alpha = 1f;
         Debug.Log("resetAlpha");
     }
+    
 
 }
