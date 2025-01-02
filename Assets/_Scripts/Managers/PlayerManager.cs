@@ -42,8 +42,8 @@ public class PlayerManager : MonoBehaviour
         rightHard.PlayOneShot(hardPunch);
     }
     void RightPunch(){
-        leftSoft.volume = 1 - strength;
-        leftHard.volume = strength;
+        leftSoft.volume = (1 - strength) * volMult;
+        leftHard.volume = strength * volMult;
 
         leftSoft.PlayOneShot(softPunch);
         leftHard.PlayOneShot(hardPunch);
