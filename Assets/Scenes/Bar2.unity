@@ -1257,6 +1257,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -3608965272016375658, guid: 3d17d41ecd75f8748af2730a5d315a3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3175566698792237483, guid: 3d17d41ecd75f8748af2730a5d315a3e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1298,7 +1303,8 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -3608965272016375658, guid: 3d17d41ecd75f8748af2730a5d315a3e, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d17d41ecd75f8748af2730a5d315a3e,
         type: 3}
@@ -2970,7 +2976,17 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemText
       value: 
-      objectReference: {fileID: 1139520932}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051474249259117614, guid: e0e0a55f6a2ebab4093f1d127926d9e4,
+        type: 3}
+      propertyPath: TVCanvas
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051474249259117614, guid: e0e0a55f6a2ebab4093f1d127926d9e4,
+        type: 3}
+      propertyPath: TVScreen
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4051474249259117614, guid: e0e0a55f6a2ebab4093f1d127926d9e4,
         type: 3}
       propertyPath: cardManager
@@ -2990,7 +3006,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TarotCardText
       value: 
-      objectReference: {fileID: 127831531}
+      objectReference: {fileID: 0}
     - target: {fileID: 4051474249259117614, guid: e0e0a55f6a2ebab4093f1d127926d9e4,
         type: 3}
       propertyPath: playerManager
@@ -3857,8 +3873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Box TV
   itemDesc: Its atv
-  ItemText: {fileID: 127831531}
-  TarotCardText: {fileID: 1791554071}
+  ItemText: {fileID: 0}
+  TarotCardText: {fileID: 0}
   TVCanvas: {fileID: 1244028901}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
@@ -4069,15 +4085,15 @@ GameObject:
   - component: {fileID: 1244028905}
   - component: {fileID: 1244028902}
   - component: {fileID: 1244028904}
-  - component: {fileID: 1244028903}
   - component: {fileID: 1244028909}
+  - component: {fileID: 1244028910}
   m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!328 &1244028902
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -4114,16 +4130,6 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!165 &1244028903
-AudioHighPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244028901}
-  m_Enabled: 1
-  m_CutoffFrequency: 730
-  m_HighpassResonanceQ: 1
 --- !u!82 &1244028904
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4136,7 +4142,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.201
+  m_Volume: 0.108
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4292,7 +4298,7 @@ RectTransform:
   m_GameObject: {fileID: 1244028901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.713}
-  m_LocalScale: {x: 0.001893209, y: 0.0032340053, z: 0.0020359426}
+  m_LocalScale: {x: 0.0022445887, y: 0.0035473208, z: 0.0024138137}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 774680141}
@@ -4336,6 +4342,15 @@ MonoBehaviour:
   - {fileID: 32900000, guid: b11c49fec102d5044972069e157af59e, type: 3}
   - {fileID: 32900000, guid: 3c6cd949b362e994c98f91cbe6a0a430, type: 3}
   - {fileID: 32900000, guid: 580b35d316cef614d9ddc22bb3da918b, type: 3}
+--- !u!170 &1244028910
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244028901}
+  m_Enabled: 1
+  m_DistortionLevel: 0.49
 --- !u!4 &1270476527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6531682971878435965, guid: 22d082cc9a4d2594b8bf9c8ee532c29a,
