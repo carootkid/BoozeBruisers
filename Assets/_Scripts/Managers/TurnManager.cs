@@ -16,8 +16,9 @@ public class TurnManager : MonoBehaviour
     public bool punching = false; 
 
     void Start()
-    {
-
+    {   
+        PlayerOneTurn = (Random.Range(0,2) == 0);
+        Debug.Log(PlayerOneTurn);
         UpdateCameraState();
     }
 

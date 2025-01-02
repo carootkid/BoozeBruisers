@@ -33,7 +33,6 @@ public class Item : MonoBehaviour
         zonkManager.PlayerTwoZonkLevel = 0f;
         //Finds turn manager and sets it to player ones turn first (NEED TO CHANGE WITH TURN SYSTEM : coin flip for who starts)
         turnManager = FindObjectOfType<TurnManager>();
-        turnManager.PlayerOneTurn = true;
 
         ItemText.text = itemName;
 
@@ -132,7 +131,7 @@ public class Item : MonoBehaviour
 
             turnManager.punching = true;
 
-            float randPunch = Random.Range(0,100);
+            float randPunch = Random.Range(0,101);
             Debug.Log(randPunch);
             randPunch = randPunch / 100; 
             playerManager.strength = randPunch;
@@ -145,7 +144,7 @@ public class Item : MonoBehaviour
 
             turnManager.punching = true;
 
-            float randPunch = Random.Range(0,100);
+            float randPunch = Random.Range(0,101);
             Debug.Log(randPunch);
             randPunch = randPunch / 100;
             playerManager.strength = randPunch;
