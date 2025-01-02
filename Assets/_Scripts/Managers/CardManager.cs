@@ -12,7 +12,7 @@ public class Card
     // Name the cards and what they do when drawn
     public void CardEffect()
     {
-
+        //if(cardName == Something){}
     }
 }
 
