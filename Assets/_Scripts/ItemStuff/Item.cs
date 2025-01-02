@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
     public ZonkManager zonkManager;
     public TurnManager turnManager;
     public CardManager cardManager;
+    public PlayerManager playerManager;
 
     [Header("Animator (ONLY FOR PLAYERS)")]
     public Animator playerAnimator;
@@ -131,8 +132,8 @@ public class Item : MonoBehaviour
 
             float randPunch = Random.Range(0,100);
             Debug.Log(randPunch);
-            randPunch = randPunch / 100;
-            Debug.Log(randPunch);
+            randPunch = randPunch / 100; 
+            playerManager.strength = randPunch;
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
         }
@@ -144,6 +145,8 @@ public class Item : MonoBehaviour
 
             float randPunch = Random.Range(0,100);
             Debug.Log(randPunch);
+            randPunch = randPunch / 100;
+            playerManager.strength = randPunch;
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Right");
         }
