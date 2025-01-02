@@ -61,7 +61,7 @@ public class ItemSelect : MonoBehaviour
 
     private void ResetHover()
     {
-        
+        currentHoveredItem = null;
         Cursor.SetCursor(cursorTextureNormal, new Vector2(cursorSize / 2, cursorSize / 2), CursorMode.Auto);
     }
 }
