@@ -1511,9 +1511,9 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2.1166666
-        value: {x: 1.919, y: -24.849, z: -0.889}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        value: {x: 2.095, y: 7.894, z: 0.29}
+        inSlope: {x: 0, y: 67.679985, z: 3.9840002}
+        outSlope: {x: 0, y: 67.679985, z: 3.9840002}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -8878,7 +8878,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.1166666
-        value: 1.919
+        value: 2.095
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -8935,9 +8935,9 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.1166666
-        value: -24.849
-        inSlope: 0
-        outSlope: 0
+        value: 7.894
+        inSlope: 67.679985
+        outSlope: 67.679985
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -8992,9 +8992,9 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.1166666
-        value: -0.889
-        inSlope: 0
-        outSlope: 0
+        value: 0.29
+        inSlope: 3.9840002
+        outSlope: 3.9840002
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -14884,7 +14884,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Reginald/ReginaldArmature/root/pelvis/spine_01/spine_02/neck
+    path: Reginald (1)/ReginaldArmature/root/pelvis/thigh_r/calf_r
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -14896,7 +14896,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Reginald/ReginaldArmature/root/pelvis/spine_01/spine_02/neck
+    path: Reginald (1)/ReginaldArmature/root/pelvis/thigh_r/calf_r
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -14908,7 +14908,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Reginald/ReginaldArmature/root/pelvis/spine_01/spine_02/neck
+    path: Reginald (1)/ReginaldArmature/root/pelvis/thigh_r/calf_r
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -16504,7 +16504,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Reginald (1)/ReginaldArmature/root/pelvis/thigh_r/calf_r
+    path: Reginald/ReginaldArmature/root/pelvis/spine_01/spine_02/neck
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -16516,7 +16516,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Reginald (1)/ReginaldArmature/root/pelvis/thigh_r/calf_r
+    path: Reginald/ReginaldArmature/root/pelvis/spine_01/spine_02/neck
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -16528,7 +16528,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Reginald (1)/ReginaldArmature/root/pelvis/thigh_r/calf_r
+    path: Reginald/ReginaldArmature/root/pelvis/spine_01/spine_02/neck
     classID: 4
     script: {fileID: 0}
     flags: 0
