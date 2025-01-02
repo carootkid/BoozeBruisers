@@ -347,7 +347,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31
+    m_Bits: 223
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -808,7 +808,7 @@ PrefabInstance:
     - target: {fileID: 5392155778237063942, guid: 22d082cc9a4d2594b8bf9c8ee532c29a,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5392155778237063942, guid: 22d082cc9a4d2594b8bf9c8ee532c29a,
         type: 3}
@@ -870,6 +870,7 @@ MonoBehaviour:
   itemDesc: Punche thise guye
   ItemText: {fileID: 1791554071}
   TarotCardText: {fileID: 0}
+  TVCanvas: {fileID: 0}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
   cardManager: {fileID: 0}
@@ -2614,7 +2615,7 @@ PrefabInstance:
     - target: {fileID: 5392155778237063942, guid: 22d082cc9a4d2594b8bf9c8ee532c29a,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5392155778237063942, guid: 22d082cc9a4d2594b8bf9c8ee532c29a,
         type: 3}
@@ -3813,7 +3814,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31
+    m_Bits: 159
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3833,14 +3834,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306186085}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13048059, y: 0.026179757, z: -0.0034466293, w: 0.9910992}
-  m_LocalPosition: {x: -0.893, y: -0.076, z: -0.493}
+  m_LocalRotation: {x: 0.14775789, y: 0.026113773, z: -0.0039027296, w: 0.98867106}
+  m_LocalPosition: {x: -0.893, y: -0.05399999, z: -0.541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1660853300}
   m_Father: {fileID: 1557082517}
-  m_LocalEulerAnglesHint: {x: 15, y: 3.026, z: 0}
+  m_LocalEulerAnglesHint: {x: 17, y: 3.026, z: 0}
 --- !u!114 &1306186090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4138,6 +4139,7 @@ MonoBehaviour:
   itemDesc: Fuck this guy
   ItemText: {fileID: 1204868344}
   TarotCardText: {fileID: 0}
+  TVCanvas: {fileID: 0}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
   cardManager: {fileID: 0}
@@ -5316,7 +5318,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31
+    m_Bits: 95
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5336,14 +5338,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694780644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00011923641, y: 0.99144447, z: -0.13052608, w: 0.00090570503}
-  m_LocalPosition: {x: -0.871, y: -0.082, z: 0.603}
+  m_LocalRotation: {x: 0.0001354553, y: 0.98901546, z: -0.14780936, w: 0.00090635254}
+  m_LocalPosition: {x: -0.871, y: -0.06, z: 0.603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1467505176}
   m_Father: {fileID: 1557082517}
-  m_LocalEulerAnglesHint: {x: 15, y: 179.895, z: 0}
+  m_LocalEulerAnglesHint: {x: 17, y: 179.895, z: 0}
 --- !u!114 &1694780650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12074,7 +12076,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31
+    m_Bits: 223
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
