@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
     public TMP_Text ItemText;
     public TMP_Text TarotCardText;
 
+
     public GameObject TVCanvas;
 
     [Header("Game Management")]
@@ -27,11 +28,10 @@ public class Item : MonoBehaviour
     void Start()
     {
         cardManager = FindObjectOfType<CardManager>();
-        //Finds zonk manager and sets zonk level to 0 (NEED TO CHANGE WITH TURN SYSTEM : need to make zonk level on a player by player basis)
         zonkManager = FindObjectOfType<ZonkManager>();
         zonkManager.PlayerOneZonkLevel = 0f;
         zonkManager.PlayerTwoZonkLevel = 0f;
-        //Finds turn manager and sets it to player ones turn first (NEED TO CHANGE WITH TURN SYSTEM : coin flip for who starts)
+
         turnManager = FindObjectOfType<TurnManager>();
 
         ItemText.text = itemName;
@@ -63,18 +63,23 @@ public class Item : MonoBehaviour
     public void Click()
     {
         //on click does stuff
-        if (itemName == "Leaf Lubber")
+        if (itemName == "Leaf Lubber" )
         {
             Debug.Log("Clicked Leaf Lubber");
 
             if(turnManager.PlayerOneTurn)
             {
                 zonkManager.PlayerOneZonkLevel += 10f;   
+                zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition; 
             }
             else if (!turnManager.PlayerOneTurn)
             {
                 zonkManager.PlayerTwoZonkLevel += 10f;
+                zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition; 
             }
+            zonkManager.canClick = true;
+            zonkManager.ZonkAddition = 0;
+           
             
         }
         else if (itemName == "Trigger Sappy")
@@ -82,12 +87,17 @@ public class Item : MonoBehaviour
             Debug.Log("Clicked Trigger Sappy");
             if(turnManager.PlayerOneTurn)
             {
-                zonkManager.PlayerOneZonkLevel += 20f;   
+                zonkManager.PlayerOneZonkLevel += 20f;  
+                zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition;  
             }
             else if (!turnManager.PlayerOneTurn)
             {
                 zonkManager.PlayerTwoZonkLevel += 20f;
+                zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition; 
             }
+            zonkManager.canClick = true;
+            zonkManager.ZonkAddition = 0;
+    
             
         }
         else if (itemName == "Mighty Moonshine")
@@ -95,27 +105,37 @@ public class Item : MonoBehaviour
             Debug.Log("Clicked Mighty Moonshine");
             if(turnManager.PlayerOneTurn)
             {
-                zonkManager.PlayerOneZonkLevel += 30f;   
+                zonkManager.PlayerOneZonkLevel += 30f; 
+                zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition;   
             }
             else if (!turnManager.PlayerOneTurn)
             {
                 zonkManager.PlayerTwoZonkLevel += 30f;
+                zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition; 
             }
+            zonkManager.canClick = true;
+            zonkManager.ZonkAddition = 0;
+         
         }
         else if (itemName == "House Fire")
         {
             Debug.Log("Clicked House Fire");
             if(turnManager.PlayerOneTurn)
             {
-                zonkManager.PlayerOneZonkLevel += 50f;   
+                zonkManager.PlayerOneZonkLevel += 50f; 
+                zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition;  
             }
             else if (!turnManager.PlayerOneTurn)
             {
                 zonkManager.PlayerTwoZonkLevel += 50f;
+                zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition;  
             }
+            zonkManager.canClick = true;
+            zonkManager.ZonkAddition = 0;
+        
 
         }
-        else if(itemName == "Tarot Cards")
+        else if(itemName == "Tarot Cards" && zonkManager.canClick)
         {
             Debug.Log("Clicked Tarot Cards");
             Card drawnCard = cardManager.DrawCard();
@@ -126,7 +146,7 @@ public class Item : MonoBehaviour
                 Debug.Log("No Card drawn");
             }
         }
-        else if (itemName == "Player Two")
+        else if (itemName == "Player Two" && zonkManager.canClick)
         {
             Debug.Log("Punching Player Two");
 
@@ -135,13 +155,14 @@ public class Item : MonoBehaviour
             float randPunch = Random.Range(0,101);
             float ZonkEffect = randPunch / 2;
             Debug.Log(randPunch);
-            
+            randPunch += playerManager.damageAddition;
             randPunch = randPunch / 100; 
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
             zonkManager.PlayerTwoZonkLevel = zonkManager.PlayerTwoZonkLevel + ZonkEffect;
+
         }
-        else if (itemName == "Player One")
+        else if (itemName == "Player One" && zonkManager.canClick)
         {
             Debug.Log("Punching Player One");
 
@@ -149,13 +170,14 @@ public class Item : MonoBehaviour
 
             float randPunch = Random.Range(0,101);
             float ZonkEffect = randPunch / 2;
-            
             Debug.Log(randPunch);
+            randPunch += playerManager.damageAddition;
             randPunch = randPunch / 100;
             playerManager.strength = randPunch;
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Right");
             zonkManager.PlayerOneZonkLevel = zonkManager.PlayerOneZonkLevel + ZonkEffect;
+
         }else if (itemName == "Box TV")
         {
             Debug.Log("Turning on TV");
@@ -200,7 +222,6 @@ public class Item : MonoBehaviour
     public void ResetAlpha()
     {
         alpha = 1f;
-        Debug.Log("resetAlpha");
     }
     
 

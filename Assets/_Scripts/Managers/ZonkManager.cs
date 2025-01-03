@@ -8,21 +8,29 @@ public class ZonkManager : MonoBehaviour
     [SerializeField] private GameObject skinnedMeshObject1;
     [SerializeField] private GameObject skinnedMeshObject2;
 
+    public bool canClick;
+
     private SkinnedMeshRenderer skinnedMeshRenderer1;
     private SkinnedMeshRenderer skinnedMeshRenderer2;
 
     public float PlayerOneZonkLevel = 0f;
     public float PlayerTwoZonkLevel = 0f;
 
+    
+    public int playerOneRarityAddition;
+    public int playerTwoRarityAddition;
+    public float ZonkAddition;
+
+    [Header("Beer stuff")]
     private int HeightIndex1;
     private int WaveIndex1;
     private int HeightIndex2;
     private int WaveIndex2;
-
-    public TMP_Text zonkText;
-
     private float currentHeight1 = 0f;
     private float currentHeight2 = 0f;
+
+
+    public TMP_Text zonkText;
 
     public float heightSmoothSpeed = 5f;
 
@@ -31,6 +39,12 @@ public class ZonkManager : MonoBehaviour
 
     void Start()
     {
+        playerOneRarityAddition = (int)(PlayerOneZonkLevel / 5f); // addition for making cards appear more often
+        playerTwoRarityAddition = (int)(PlayerTwoZonkLevel / 5f); // addition for making cards appear more often
+        
+        ZonkAddition = 0f; // Addition for making drinks more potent
+        canClick = true; // if you can click objects (not including drinks) or not
+
         skinnedMeshRenderer1 = skinnedMeshObject1.GetComponent<SkinnedMeshRenderer>();
         if (skinnedMeshRenderer1 != null && skinnedMeshRenderer1.sharedMesh != null)
         {

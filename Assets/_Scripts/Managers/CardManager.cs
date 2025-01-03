@@ -142,21 +142,21 @@ public class Card
                 Debug.Log("Tie");
             }
         }
-        else if(cardName == "")
+        else if(cardName == "The Alchoholic")//Forces player to drink
         {
-
+            zonkManager.canClick = false;
         }
-        else if(cardName == "")
+        else if(cardName == "Drunken Rage")//Makes punch 10 points stronger
         {
-
+            playerManager.damageAddition = 10.0f;
         }
-        else if(cardName == "")
+        else if(cardName == "Drunken Wrath")//Makes punch 20 points stronger
         {
-
+             playerManager.damageAddition = 20.0f;
         }
-        else if(cardName == "")
+        else if(cardName == "The Lightweight")//Makes next drink more potent
         {
-
+            zonkManager.ZonkAddition = 15f;
         }
         else if(cardName == "")
         {

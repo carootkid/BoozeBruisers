@@ -2995,6 +2995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4051474249259117614, guid: e0e0a55f6a2ebab4093f1d127926d9e4,
         type: 3}
+      propertyPath: canClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051474249259117614, guid: e0e0a55f6a2ebab4093f1d127926d9e4,
+        type: 3}
       propertyPath: cardManager
       value: 
       objectReference: {fileID: 1537118139}
@@ -5611,8 +5616,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinnedMeshObject1: {fileID: 2118832447}
   skinnedMeshObject2: {fileID: 1137199246}
-  PlayerOneZonkLevel: 10
+  canClick: 1
+  PlayerOneZonkLevel: 0
   PlayerTwoZonkLevel: 0
+  playerOneRarityAddition: 0
+  playerTwoRarityAddition: 0
+  ZonkAddition: 0
   zonkText: {fileID: 1139520932}
   heightSmoothSpeed: 5
 --- !u!4 &1537118137
@@ -5674,17 +5683,17 @@ MonoBehaviour:
     playerAnimator: {fileID: 0}
     CardIsDone: 1
   - cardName: Judgement Pistols
-    rarityWeight: 10
+    rarityWeight: 1
     cardPrefab: {fileID: 8346213286722073002, guid: 40ccf6fca5648a144b22dfea5d134629,
       type: 3}
     playerAnimator: {fileID: 1938506236}
-    CardIsDone: 0
+    CardIsDone: 1
   - cardName: The Alchoholic
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 6038c96773b51324e943cc1f31fd09ac,
       type: 3}
     playerAnimator: {fileID: 1938506236}
-    CardIsDone: 0
+    CardIsDone: 1
   - cardName: The Zooted
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: cd71cb713649ee74e8f92950bcf5ff4b,
@@ -5702,13 +5711,13 @@ MonoBehaviour:
     cardPrefab: {fileID: 8346213286722073002, guid: 475b931b1f518544baf94288d532684c,
       type: 3}
     playerAnimator: {fileID: 0}
-    CardIsDone: 0
+    CardIsDone: 1
   - cardName: Drunken Rage
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 552ddaae1ee9beb488ba5a4fb3c26d32,
       type: 3}
     playerAnimator: {fileID: 0}
-    CardIsDone: 0
+    CardIsDone: 1
   - cardName: Blank
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 72be1477a2c3d1949bce4e9d0cc5a149,
@@ -5728,7 +5737,7 @@ MonoBehaviour:
     playerAnimator: {fileID: 0}
     CardIsDone: 1
   - cardName: The Lightweight
-    rarityWeight: 0
+    rarityWeight: 5
     cardPrefab: {fileID: 8346213286722073002, guid: f821a02b94f4e7e4fa500b4f60b7dedd,
       type: 3}
     playerAnimator: {fileID: 0}
@@ -5990,6 +5999,89 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb633f8993716b47a33f3b8467be306, type: 3}
+--- !u!1001 &1600746467
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0893307
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0893307
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.937342
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.574
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5105
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.127
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.84784997
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000018530399
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5302361
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000011588693
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 64.043
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7924dc57fa1b33b4bacb854f5fb732db,
+        type: 3}
+      propertyPath: m_Name
+      value: Cigar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7924dc57fa1b33b4bacb854f5fb732db, type: 3}
 --- !u!4 &1613177352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: adb633f8993716b47a33f3b8467be306,
@@ -8065,6 +8157,7 @@ MonoBehaviour:
   rightHard: {fileID: 1785343854}
   hardPunch: {fileID: 8300000, guid: 28e65724c4f074848ab0852a6a4ed67d, type: 3}
   softPunch: {fileID: 8300000, guid: 1aae01692f7be024192a43476471ea9d, type: 3}
+  damageAddition: 0
   volMult: 0.05
   strength: 0.5
 --- !u!1 &1943062486
@@ -14477,3 +14570,4 @@ SceneRoots:
   - {fileID: 409563285}
   - {fileID: 1159755571}
   - {fileID: 1506582118}
+  - {fileID: 1600746467}

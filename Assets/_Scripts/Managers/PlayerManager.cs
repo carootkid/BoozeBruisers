@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     public AudioClip softPunch;
 
     [Header("Values")]
+    public float damageAddition;
     public float volMult = 1f;
 
     public float strength = 0.5f;
@@ -26,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        damageAddition = 0.0f;
     }
 
     // Update is called once per frame
@@ -52,6 +53,7 @@ public class PlayerManager : MonoBehaviour
 
     void PunchEnded(){
         deathManager.deathChance();
+        damageAddition = 0.0f;
         turnmanager.PlayerOneTurn = !turnmanager.PlayerOneTurn;
         turnmanager.punching = false;
     }
