@@ -5573,6 +5573,7 @@ GameObject:
   - component: {fileID: 1537118136}
   - component: {fileID: 1537118138}
   - component: {fileID: 1537118139}
+  - component: {fileID: 1537118140}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5594,7 +5595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinnedMeshObject1: {fileID: 2118832447}
   skinnedMeshObject2: {fileID: 1137199246}
-  PlayerOneZonkLevel: 0
+  PlayerOneZonkLevel: 100
   PlayerTwoZonkLevel: 0
   zonkText: {fileID: 1139520932}
   heightSmoothSpeed: 5
@@ -5696,6 +5697,22 @@ MonoBehaviour:
     rarityWeight: 5
     cardPrefab: {fileID: 8346213286722073002, guid: c1a3999808e9a4d439a390d7c47e8ed2,
       type: 3}
+--- !u!114 &1537118140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537118135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e9c6010b5f2054eb2a515f0171ee72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zonkManager: {fileID: 1537118136}
+  turnManager: {fileID: 1537118138}
+  playerManager: {fileID: 1938506237}
+  deathChanceMultiplier: 0.01
 --- !u!1 &1557082516
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,6 +8016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnmanager: {fileID: 1537118138}
+  deathManager: {fileID: 1537118140}
   leftSoft: {fileID: 611411046}
   leftHard: {fileID: 611411047}
   rightSoft: {fileID: 1785343853}

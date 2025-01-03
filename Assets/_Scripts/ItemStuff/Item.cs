@@ -133,8 +133,10 @@ public class Item : MonoBehaviour
 
             float randPunch = Random.Range(0,101);
             Debug.Log(randPunch);
+            zonkManager.PlayerTwoZonkLevel = zonkManager.PlayerTwoZonkLevel + randPunch / 2;
             randPunch = randPunch / 100; 
-            playerManager.strength = randPunch;
+            zonkManager.PlayerTwoZonkLevel += randPunch;
+            
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
         }
@@ -145,6 +147,7 @@ public class Item : MonoBehaviour
             turnManager.punching = true;
 
             float randPunch = Random.Range(0,101);
+            zonkManager.PlayerOneZonkLevel = zonkManager.PlayerOneZonkLevel + randPunch / 2;
             Debug.Log(randPunch);
             randPunch = randPunch / 100;
             playerManager.strength = randPunch;
