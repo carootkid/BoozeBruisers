@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     [Header("Manager")]
     public TurnManager turnmanager;
+    public DeathManager deathManager;
 
     [Header("Sources")]
     public AudioSource leftSoft;
@@ -50,6 +51,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     void PunchEnded(){
+        deathManager.deathChance();
         turnmanager.PlayerOneTurn = !turnmanager.PlayerOneTurn;
         turnmanager.punching = false;
     }
