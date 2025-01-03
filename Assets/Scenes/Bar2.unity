@@ -873,7 +873,7 @@ MonoBehaviour:
   TVCanvas: {fileID: 0}
   zonkManager: {fileID: 1537118136}
   turnManager: {fileID: 1537118138}
-  cardManager: {fileID: 0}
+  cardManager: {fileID: 1537118139}
   playerManager: {fileID: 1938506237}
   playerAnimator: {fileID: 1938506236}
 --- !u!65 &281454966
@@ -2602,7 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: d31c9ff4ef344e343a6e977e81c1f854, type: 2}
   m_Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3166,6 +3166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Radio
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e4c8efa888e04447b96d041eda28eae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513859187771203891, guid: 8e4c8efa888e04447b96d041eda28eae,
         type: 3}
@@ -4311,6 +4316,7 @@ GameObject:
   - component: {fileID: 1244028909}
   - component: {fileID: 1244028910}
   - component: {fileID: 1244028911}
+  - component: {fileID: 1244028912}
   m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
@@ -4520,14 +4526,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244028901}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0.713}
   m_LocalScale: {x: 0.0022445887, y: 0.0035473208, z: 0.0024138137}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 774680141}
   m_Father: {fileID: 1175533075}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.351, y: -0.169}
@@ -4598,6 +4604,16 @@ AudioReverbFilter:
   m_LFReference: 250
   m_ReflectionsDelay: 0
   m_ReverbPreset: 27
+--- !u!165 &1244028912
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244028901}
+  m_Enabled: 1
+  m_CutoffFrequency: 2143
+  m_HighpassResonanceQ: 1
 --- !u!4 &1270476527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6531682971878435965, guid: 22d082cc9a4d2594b8bf9c8ee532c29a,
@@ -5595,7 +5611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinnedMeshObject1: {fileID: 2118832447}
   skinnedMeshObject2: {fileID: 1137199246}
-  PlayerOneZonkLevel: 100
+  PlayerOneZonkLevel: 10
   PlayerTwoZonkLevel: 0
   zonkText: {fileID: 1139520932}
   heightSmoothSpeed: 5
@@ -5646,57 +5662,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList:
   - cardName: AllISeeIsRed
-    rarityWeight: 10
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: a3aec957aed7ebc418ba5ddec9a8338b,
       type: 3}
+    playerAnimator: {fileID: 1938506236}
+    CardIsDone: 1
   - cardName: Drunkify
-    rarityWeight: 10
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 8d2e42d1e85d8d140937edef7d309cee,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 1
   - cardName: Judgement Pistols
     rarityWeight: 10
     cardPrefab: {fileID: 8346213286722073002, guid: 40ccf6fca5648a144b22dfea5d134629,
       type: 3}
+    playerAnimator: {fileID: 1938506236}
+    CardIsDone: 0
   - cardName: The Alchoholic
-    rarityWeight: 10
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 6038c96773b51324e943cc1f31fd09ac,
       type: 3}
+    playerAnimator: {fileID: 1938506236}
+    CardIsDone: 0
   - cardName: The Zooted
-    rarityWeight: 10
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: cd71cb713649ee74e8f92950bcf5ff4b,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
   - cardName: The Devil
-    rarityWeight: 10
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 12234761a2a3bbd499c4000c31bb6445,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
   - cardName: Drunken Wrath
-    rarityWeight: 5
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 475b931b1f518544baf94288d532684c,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
   - cardName: Drunken Rage
-    rarityWeight: 10
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 552ddaae1ee9beb488ba5a4fb3c26d32,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
   - cardName: Blank
-    rarityWeight: 5
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 72be1477a2c3d1949bce4e9d0cc5a149,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 1
   - cardName: The Saint
-    rarityWeight: 5
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: fb48034e03c366342a996f683111ab0b,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 1
   - cardName: The Pure
-    rarityWeight: 5
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 3ac337b216f31cb4aba5360928ec2014,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 1
   - cardName: The Lightweight
-    rarityWeight: 5
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: f821a02b94f4e7e4fa500b4f60b7dedd,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
   - cardName: The Sober
-    rarityWeight: 5
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: c1a3999808e9a4d439a390d7c47e8ed2,
       type: 3}
+    playerAnimator: {fileID: 0}
+    CardIsDone: 1
 --- !u!114 &1537118140
 MonoBehaviour:
   m_ObjectHideFlags: 0

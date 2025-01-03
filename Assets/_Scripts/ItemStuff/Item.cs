@@ -119,6 +119,7 @@ public class Item : MonoBehaviour
         {
             Debug.Log("Clicked Tarot Cards");
             Card drawnCard = cardManager.DrawCard();
+            drawnCard.CardEffect();
             if(drawnCard != null){
                 Debug.Log($"You drew: {drawnCard.cardName}");
             }else{
@@ -132,13 +133,13 @@ public class Item : MonoBehaviour
             turnManager.punching = true;
 
             float randPunch = Random.Range(0,101);
+            float ZonkEffect = randPunch / 2;
             Debug.Log(randPunch);
-            zonkManager.PlayerTwoZonkLevel = zonkManager.PlayerTwoZonkLevel + randPunch / 2;
-            randPunch = randPunch / 100; 
-            zonkManager.PlayerTwoZonkLevel += randPunch;
             
+            randPunch = randPunch / 100; 
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
+            zonkManager.PlayerTwoZonkLevel = zonkManager.PlayerTwoZonkLevel + ZonkEffect;
         }
         else if (itemName == "Player One")
         {
@@ -147,12 +148,14 @@ public class Item : MonoBehaviour
             turnManager.punching = true;
 
             float randPunch = Random.Range(0,101);
-            zonkManager.PlayerOneZonkLevel = zonkManager.PlayerOneZonkLevel + randPunch / 2;
+            float ZonkEffect = randPunch / 2;
+            
             Debug.Log(randPunch);
             randPunch = randPunch / 100;
             playerManager.strength = randPunch;
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Right");
+            zonkManager.PlayerOneZonkLevel = zonkManager.PlayerOneZonkLevel + ZonkEffect;
         }else if (itemName == "Box TV")
         {
             Debug.Log("Turning on TV");
