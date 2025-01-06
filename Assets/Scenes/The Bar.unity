@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.32
+  m_FogDensity: 0.56
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -671,10 +671,110 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5831791148757758088, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 14.478
+      objectReference: {fileID: 0}
+    - target: {fileID: -5831791148757758088, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -26.565
+      objectReference: {fileID: 0}
+    - target: {fileID: -5831791148757758088, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -63.435
+      objectReference: {fileID: 0}
+    - target: {fileID: -4450279261086204410, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4450279261086204410, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4450279261086204410, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3303230678586241940, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3303230678586241940, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3303230678586241940, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3274352149113796808, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 14.478
+      objectReference: {fileID: 0}
+    - target: {fileID: -3274352149113796808, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 26.565
+      objectReference: {fileID: 0}
+    - target: {fileID: -3274352149113796808, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 63.435
+      objectReference: {fileID: 0}
+    - target: {fileID: -2812509585336667467, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2812509585336667467, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2812509585336667467, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3427828bb5fbcde47be88c5d7115201d,
         type: 3}
       propertyPath: m_Name
-      value: Bartenda
+      value: Gavin
+      objectReference: {fileID: 0}
+    - target: {fileID: 978493402920799702, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 978493402920799702, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 978493402920799702, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392155778237063942, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_Name
+      value: Gavin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641379243033687498, guid: 3427828bb5fbcde47be88c5d7115201d,
+        type: 3}
+      propertyPath: m_Name
+      value: GavinArmature
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
