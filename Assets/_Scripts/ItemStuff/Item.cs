@@ -153,9 +153,9 @@ public class Item : MonoBehaviour
             turnManager.punching = true;
 
             float randPunch = Random.Range(0,101);
+            randPunch += playerManager.damageAddition;
             float ZonkEffect = randPunch / 2;
             Debug.Log(randPunch);
-            randPunch += playerManager.damageAddition;
             randPunch = randPunch / 100; 
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
@@ -167,18 +167,18 @@ public class Item : MonoBehaviour
             Debug.Log("Punching Player One");
 
             turnManager.punching = true;
-
             float randPunch = Random.Range(0,101);
+            randPunch += playerManager.damageAddition;
             float ZonkEffect = randPunch / 2;
             Debug.Log(randPunch);
-            randPunch += playerManager.damageAddition;
             randPunch = randPunch / 100;
             playerManager.strength = randPunch;
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Right");
             zonkManager.PlayerOneZonkLevel = zonkManager.PlayerOneZonkLevel + ZonkEffect;
 
-        }else if (itemName == "Box TV")
+        }
+        else if (itemName == "Box TV")
         {
             Debug.Log("Turning on TV");
             if(TVCanvas.activeSelf){

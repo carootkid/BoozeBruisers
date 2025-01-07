@@ -5,10 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class Card
 {
-    
     public string cardName;
-    public int rarityWeight; // higher it is, the more common
+    public int rarityWeight; 
     public GameObject cardPrefab;
+    public bool goodCard;
+
+    [HideInInspector]
+    public int calculatedWeight;
+
 
     private ZonkManager zonkManager;
     private TurnManager turnManager;
@@ -18,7 +22,6 @@ public class Card
     public Animator playerAnimator;
     public bool CardIsDone;
 
-   
     private void InitializeManagers()
     {
         GameObject managerObject = GameObject.FindObjectOfType<CardManager>()?.gameObject;
@@ -44,8 +47,6 @@ public class Card
         if (item == null) Debug.LogError("Item component is missing!");
     }
 
-
-
     public void CardEffect()
     {
         InitializeManagers();
@@ -62,7 +63,7 @@ public class Card
                 zonkManager.PlayerTwoZonkLevel += DrunkLevel;
             }
         }
-        else if (cardName == "The Sober")//Makes player 15 points less drunk
+        else if (cardName == "The Sober") // Makes player 15 points less drunk
         {
             if (turnManager.PlayerOneTurn)
             {
@@ -74,7 +75,7 @@ public class Card
             }
 
         }
-        else if (cardName == "The Pure")//makes player 25 points less drunk
+        else if (cardName == "The Pure") // makes player 25 points less drunk
         {
             if (turnManager.PlayerOneTurn)
             {
@@ -85,7 +86,7 @@ public class Card
                 zonkManager.PlayerTwoZonkLevel -= 25;
             }
         }
-        else if (cardName == "The Saint")//Removes all of the drunkness off a player
+        else if (cardName == "The Saint") // Removes all of the drunkenness off a player
         {
             if (turnManager.PlayerOneTurn)
             {
@@ -96,15 +97,15 @@ public class Card
                 zonkManager.PlayerTwoZonkLevel -= zonkManager.PlayerTwoZonkLevel;
             }
         }
-        else if (cardName == "AllISeeIsRed")//insantly makes player punch the other player
+        else if (cardName == "AllISeeIsRed") // Instantly makes player punch the other player
         {
-            if(!turnManager.PlayerOneTurn)
+            if (!turnManager.PlayerOneTurn)
             {
                 Debug.Log("Punching Player One");
 
                 turnManager.punching = true;
 
-                float randPunch = Random.Range(0,101);
+                float randPunch = Random.Range(0, 101);
                 float ZonkEffect = randPunch / 2;
                 Debug.Log(randPunch);
 
@@ -120,60 +121,139 @@ public class Card
 
                 turnManager.punching = true;
 
-                float randPunch = Random.Range(0,101);
+                float randPunch = Random.Range(0, 101);
                 float ZonkEffect = randPunch / 2;
                 Debug.Log(randPunch);
-                
-                randPunch = randPunch / 100; 
+
+                randPunch = randPunch / 100;
                 playerAnimator.SetFloat("Strength", randPunch);
                 playerAnimator.SetTrigger("Left");
                 playerAnimator.SetTrigger("Left");
                 zonkManager.PlayerTwoZonkLevel = zonkManager.PlayerTwoZonkLevel + ZonkEffect;
             }
         }
-        else if (cardName == "Judgement Pistols")//Person the most drunk loosesc:\Users\Broth\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TempState\ScreenClip\{39EA2452-9937-40F9-806D-FC3B7A6EDED2}.png
+        else if (cardName == "Judgement Pistols") // Person the most drunk wins
         {
-            
-            if(zonkManager.PlayerOneZonkLevel > zonkManager.PlayerTwoZonkLevel){
-                Debug.Log("Player One Wins");//whenever we actually make a game over screen and stuff and something to say ___ wins we put that here
-            } else if(zonkManager.PlayerTwoZonkLevel > zonkManager.PlayerOneZonkLevel){
-                Debug.Log("player two wins");//whenever we actually make a game over screen and stuff and something to say ___ wins we put that here
-            } else {
+
+            if (zonkManager.PlayerOneZonkLevel > zonkManager.PlayerTwoZonkLevel)
+            {
+                Debug.Log("Player One Wins"); // whenever we actually make a game over screen and stuff and something to say ___ wins we put that here
+            }
+            else if (zonkManager.PlayerTwoZonkLevel > zonkManager.PlayerOneZonkLevel)
+            {
+                Debug.Log("Player Two Wins"); // whenever we actually make a game over screen and stuff and something to say ___ wins we put that here
+            }
+            else
+            {
                 Debug.Log("Tie");
             }
         }
-        else if(cardName == "The Alchoholic")//Forces player to drink
+        else if (cardName == "The Alchoholic") // Forces player to drink
         {
             zonkManager.canClick = false;
         }
-        else if(cardName == "Drunken Rage")//Makes punch 10 points stronger
+        else if (cardName == "Drunken Rage") // Makes punch 10 points stronger
         {
             playerManager.damageAddition = 10.0f;
         }
-        else if(cardName == "Drunken Wrath")//Makes punch 20 points stronger
+        else if (cardName == "Drunken Wrath") // Makes punch 20 points stronger
         {
-             playerManager.damageAddition = 20.0f;
+            playerManager.damageAddition = 20.0f;
         }
-        else if(cardName == "The Lightweight")//Makes next drink more potent
+        else if (cardName == "The Lightweight") // Makes next drink more potent
         {
             zonkManager.ZonkAddition = 15f;
         }
-        else if(cardName == "")
+        else if (cardName == "The Devil") // Sets your drunkenness to 50, makes you do much more damage
+        {
+            if (turnManager.PlayerOneTurn)
+            {
+                zonkManager.PlayerOneZonkLevel += 50.0f;
+                playerManager.damageAddition = 99.0f;
+            }
+            else
+            {
+                zonkManager.PlayerTwoZonkLevel += 50.0f;
+                playerManager.damageAddition = 99.0f;
+            }
+
+        }
+        else if (cardName == "")
         {
 
         }
-        else if(cardName == "")
-        {
 
-        }
-        
     }
 }
 
-
 public class CardManager : MonoBehaviour
 {
+    private ZonkManager zonkManager;
+    private TurnManager turnManager;
+    private PlayerManager playerManager;
     public List<Card> cardList = new List<Card>();
+
+    private float playerOneGoodCardWeightIncrement = 0f;
+    private float playerTwoGoodCardWeightIncrement = 0f;
+
+    void Start() {
+        GameObject managerObject = GameObject.FindObjectOfType<CardManager>()?.gameObject;
+
+        zonkManager = managerObject.GetComponent<ZonkManager>();
+        turnManager = managerObject.GetComponent<TurnManager>();
+
+        GameObject playersObject = GameObject.Find("Players");
+        if (playersObject != null)
+        {
+            playerManager = playersObject.GetComponent<PlayerManager>();
+        }
+        else
+        {
+            Debug.LogError("Players GameObject is missing or cannot be found!");
+        }
+
+        if (zonkManager == null) Debug.LogError("ZonkManager is missing!");
+        if (turnManager == null) Debug.LogError("TurnManager is missing!");
+        if (playerManager == null) Debug.LogError("PlayerManager is missing!");
+    }
+
+    private void RecalculateWeights()
+    {
+    
+        if (turnManager.PlayerOneTurn)
+        {
+            playerOneGoodCardWeightIncrement = zonkManager.PlayerOneZonkLevel / 10f;
+            playerTwoGoodCardWeightIncrement = 0f; 
+        }
+        else
+        {
+            playerTwoGoodCardWeightIncrement = zonkManager.PlayerTwoZonkLevel / 10f;
+            playerOneGoodCardWeightIncrement = 0f;  
+        }
+
+        Debug.Log("Recalculating weights");
+        foreach (Card card in cardList)
+        {
+          
+            int originalWeight = card.rarityWeight;
+
+            card.calculatedWeight = originalWeight;
+
+            if (card.goodCard)
+            {
+                if (turnManager.PlayerOneTurn)
+                {
+            
+                    card.calculatedWeight += Mathf.FloorToInt(playerOneGoodCardWeightIncrement);
+                }
+                else
+                {
+        
+                    card.calculatedWeight += Mathf.FloorToInt(playerTwoGoodCardWeightIncrement);
+                }
+            }
+        }
+    }
 
     private int WeightCalculation()
     {
@@ -181,13 +261,14 @@ public class CardManager : MonoBehaviour
 
         foreach (Card card in cardList)
         {
-            totalWeight += card.rarityWeight;
+            totalWeight += card.calculatedWeight;
         }
         return totalWeight;
     }
 
     public Card DrawCard()
     {
+        RecalculateWeights(); 
         int totalWeight = WeightCalculation();
 
         if (totalWeight <= 0)
@@ -202,17 +283,14 @@ public class CardManager : MonoBehaviour
 
         foreach (Card card in cardList)
         {
-            if (randomNumber < card.rarityWeight)
+            if (randomNumber < card.calculatedWeight)
             {
                 return card;
             }
-            randomNumber -= card.rarityWeight; 
+            randomNumber -= card.calculatedWeight;
         }
 
         Debug.LogError("Failed to draw a card.");
         return null;
-        //To try and explain how it works basically it adds up all the cards weighting together to get a range (0 - whatever the total card weighting is)
-        //then it picks a random number and if that number is within a range of a card it picks that card, like if ones weighting was 10, every number from 0-9 could be chosen for it
     }
-
 }

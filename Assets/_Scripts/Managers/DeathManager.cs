@@ -22,19 +22,27 @@ public class DeathManager : MonoBehaviour
 
         float randomValue = Random.value;
 
-        if (randomValue < playerOneDeathChance)
-        {
-            Debug.Log("Player 1 died");
-            EndGame();
-            return;
-        }
+        if(turnManager.PlayerOneTurn){
 
-        if (randomValue < playerTwoDeathChance)
-        {
-            Debug.Log("Player 2 died");
-            EndGame();
-            return;
+            if (randomValue < playerTwoDeathChance)
+                {
+                    Debug.Log("Player 2 died");
+                    EndGame();
+                    return;
+                }
         }
+        else
+        {
+            if (randomValue < playerOneDeathChance)
+            {
+                Debug.Log("Player 1 died");
+                EndGame();
+                return;
+            }
+
+        }
+        
+        
 
         Debug.Log("Survived");
     }

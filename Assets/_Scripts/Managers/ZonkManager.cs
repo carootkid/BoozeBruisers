@@ -15,10 +15,6 @@ public class ZonkManager : MonoBehaviour
 
     public float PlayerOneZonkLevel = 0f;
     public float PlayerTwoZonkLevel = 0f;
-
-    
-    public int playerOneRarityAddition;
-    public int playerTwoRarityAddition;
     public float ZonkAddition;
 
     [Header("Beer stuff")]
@@ -39,9 +35,6 @@ public class ZonkManager : MonoBehaviour
 
     void Start()
     {
-        playerOneRarityAddition = (int)(PlayerOneZonkLevel / 5f); // addition for making cards appear more often
-        playerTwoRarityAddition = (int)(PlayerTwoZonkLevel / 5f); // addition for making cards appear more often
-        
         ZonkAddition = 0f; // Addition for making drinks more potent
         canClick = true; // if you can click objects (not including drinks) or not
 
