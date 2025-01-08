@@ -19,8 +19,11 @@ public class CoinFlip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coinHead = UnityEngine.Random.Range(0, 2);
-        Debug.Log(coinHead);
+        int randomNum = Random.Range(0, 50);
+
+        if(randomNum > 25) coinHead = 1;
+        if(randomNum < 25) coinHead = 0;
+        
     }
 
     // Update is called once per frame
