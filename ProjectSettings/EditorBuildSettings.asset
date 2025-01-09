@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Main Menu.unity
+    guid: 6300e368c2ad409418c4e10858fbdc6a
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Coin Flip.unity
+    guid: 18ddd3a5aef72fc4bb054f3b56a65a92
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/The Bar.unity
+    guid: addd4c2b0c269ca40b8be08db29f7e01
   m_configObjects: {}
