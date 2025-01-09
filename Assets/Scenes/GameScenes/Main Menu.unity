@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 46577101}
   - component: {fileID: 46577102}
   - component: {fileID: 46577103}
+  - component: {fileID: 46577104}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -273,6 +274,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &46577104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46577099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb39c18c77d016b48915a750f49a521b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 1475731455}
+  fadeCanvasGroup: {fileID: 1475731459}
+  fadeDuration: 0.5
 --- !u!1 &125397626
 GameObject:
   m_ObjectHideFlags: 0
