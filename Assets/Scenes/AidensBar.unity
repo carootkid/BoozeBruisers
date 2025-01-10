@@ -5861,8 +5861,10 @@ MonoBehaviour:
   skinnedMeshObject2: {fileID: 1137199246}
   canClick: 1
   PlayerOneZonkLevel: 0
-  PlayerTwoZonkLevel: 39.29
+  PlayerTwoZonkLevel: 0
   ZonkAddition: 0
+  playerOneDrank: 0
+  playerTwoDrank: 0
   zonkText: {fileID: 1139520932}
   heightSmoothSpeed: 5
 --- !u!4 &1537118137
