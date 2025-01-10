@@ -25,6 +25,9 @@ public class ZonkManager : MonoBehaviour
     private float currentHeight1 = 0f;
     private float currentHeight2 = 0f;
 
+    public bool playerOneDrank = false;
+    public bool playerTwoDrank = false;
+
 
     public TMP_Text zonkText;
 

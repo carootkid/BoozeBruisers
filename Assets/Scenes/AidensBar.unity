@@ -5920,15 +5920,15 @@ MonoBehaviour:
     playerAnimator: {fileID: 1938506236}
     CardIsDone: 1
   - cardName: Drunkify
-    rarityWeight: 1
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 8d2e42d1e85d8d140937edef7d309cee,
       type: 3}
-    goodCard: 1
+    goodCard: 0
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
     CardIsDone: 1
   - cardName: Judgement Pistols
-    rarityWeight: 1
+    rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 40ccf6fca5648a144b22dfea5d134629,
       type: 3}
     goodCard: 0
@@ -5963,7 +5963,7 @@ MonoBehaviour:
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 475b931b1f518544baf94288d532684c,
       type: 3}
-    goodCard: 0
+    goodCard: 1
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
     CardIsDone: 1
@@ -5971,7 +5971,7 @@ MonoBehaviour:
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 552ddaae1ee9beb488ba5a4fb3c26d32,
       type: 3}
-    goodCard: 0
+    goodCard: 1
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
     CardIsDone: 1
@@ -5987,7 +5987,7 @@ MonoBehaviour:
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: fb48034e03c366342a996f683111ab0b,
       type: 3}
-    goodCard: 0
+    goodCard: 1
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
     CardIsDone: 1
@@ -5995,7 +5995,7 @@ MonoBehaviour:
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: 3ac337b216f31cb4aba5360928ec2014,
       type: 3}
-    goodCard: 0
+    goodCard: 1
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
     CardIsDone: 1
@@ -6011,10 +6011,42 @@ MonoBehaviour:
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: c1a3999808e9a4d439a390d7c47e8ed2,
       type: 3}
-    goodCard: 0
+    goodCard: 1
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
     CardIsDone: 1
+  - cardName: The Haunted
+    rarityWeight: 0
+    cardPrefab: {fileID: 8346213286722073002, guid: 20153afc81d8bbe49a7f559b34e0c9a9,
+      type: 3}
+    goodCard: 0
+    calculatedWeight: 0
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
+  - cardName: Big Boned
+    rarityWeight: 0
+    cardPrefab: {fileID: 8346213286722073002, guid: d24ac428f4c547647a8d5491f8221a2d,
+      type: 3}
+    goodCard: 1
+    calculatedWeight: 0
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
+  - cardName: The Middle Finger
+    rarityWeight: 0
+    cardPrefab: {fileID: 8346213286722073002, guid: cf82477945f500945932305741685327,
+      type: 3}
+    goodCard: 1
+    calculatedWeight: 0
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
+  - cardName: Iron Body
+    rarityWeight: 0
+    cardPrefab: {fileID: 8346213286722073002, guid: db8971859354aec4cb630edbfb1ddc9c,
+      type: 3}
+    goodCard: 1
+    calculatedWeight: 0
+    playerAnimator: {fileID: 0}
+    CardIsDone: 0
 --- !u!114 &1537118140
 MonoBehaviour:
   m_ObjectHideFlags: 0

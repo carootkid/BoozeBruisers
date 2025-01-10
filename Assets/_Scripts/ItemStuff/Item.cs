@@ -25,6 +25,7 @@ public class Item : MonoBehaviour
 
 
 
+
     void Start()
     {
         cardManager = FindObjectOfType<CardManager>();
@@ -38,15 +39,6 @@ public class Item : MonoBehaviour
 
         //Turns off the text for the basic UI stuff as long as it exists
         //if (ItemText != null) ItemText.gameObject.SetActive(false);
-    }
-    private void Update(){
-        if(turnManager.PlayerOneTurn)
-        {
-            zonkManager.zonkText.text = "Zonk Level: " + zonkManager.PlayerOneZonkLevel;
-        }else
-        {
-            zonkManager.zonkText.text = "Zonk Level: " + zonkManager.PlayerTwoZonkLevel;
-        }
     }
 
     private void FixedUpdate() 
@@ -66,16 +58,20 @@ public class Item : MonoBehaviour
         if (itemName == "Leaf Lubber" )
         {
             Debug.Log("Clicked Leaf Lubber");
+            if (turnManager.PlayerOneTurn && zonkManager.playerOneDrank) return; 
+            if (!turnManager.PlayerOneTurn && zonkManager.playerTwoDrank) return; 
 
-            if(turnManager.PlayerOneTurn)
+            if(turnManager.PlayerOneTurn && !zonkManager.playerOneDrank)
             {
                 zonkManager.PlayerOneZonkLevel += 10f;   
                 zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition; 
+                zonkManager.playerOneDrank = true;
             }
-            else if (!turnManager.PlayerOneTurn)
+            else if (!turnManager.PlayerOneTurn && !zonkManager.playerTwoDrank)
             {
                 zonkManager.PlayerTwoZonkLevel += 10f;
                 zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition; 
+                zonkManager.playerTwoDrank = true;
             }
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
@@ -85,15 +81,20 @@ public class Item : MonoBehaviour
         else if (itemName == "Trigger Sappy")
         {
             Debug.Log("Clicked Trigger Sappy");
-            if(turnManager.PlayerOneTurn)
+            if (turnManager.PlayerOneTurn && zonkManager.playerOneDrank) return; 
+            if (!turnManager.PlayerOneTurn && zonkManager.playerTwoDrank) return; 
+
+            if(turnManager.PlayerOneTurn && !zonkManager.playerOneDrank)
             {
                 zonkManager.PlayerOneZonkLevel += 20f;  
                 zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition;  
+                zonkManager.playerOneDrank = true;
             }
-            else if (!turnManager.PlayerOneTurn)
+            else if (!turnManager.PlayerOneTurn && !zonkManager.playerTwoDrank)
             {
                 zonkManager.PlayerTwoZonkLevel += 20f;
                 zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition; 
+                zonkManager.playerTwoDrank = true;
             }
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
@@ -102,16 +103,22 @@ public class Item : MonoBehaviour
         }
         else if (itemName == "Mighty Moonshine")
         {
+
             Debug.Log("Clicked Mighty Moonshine");
-            if(turnManager.PlayerOneTurn)
+            if (turnManager.PlayerOneTurn && zonkManager.playerOneDrank) return; 
+            if (!turnManager.PlayerOneTurn && zonkManager.playerTwoDrank) return; 
+
+            if(turnManager.PlayerOneTurn && !zonkManager.playerOneDrank)
             {
                 zonkManager.PlayerOneZonkLevel += 30f; 
                 zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition;   
+                zonkManager.playerOneDrank = true;
             }
-            else if (!turnManager.PlayerOneTurn)
+            else if (!turnManager.PlayerOneTurn && !zonkManager.playerTwoDrank)
             {
                 zonkManager.PlayerTwoZonkLevel += 30f;
                 zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition; 
+                zonkManager.playerTwoDrank = true;
             }
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
@@ -120,15 +127,21 @@ public class Item : MonoBehaviour
         else if (itemName == "House Fire")
         {
             Debug.Log("Clicked House Fire");
-            if(turnManager.PlayerOneTurn)
+            if (turnManager.PlayerOneTurn && zonkManager.playerOneDrank) return; 
+            if (!turnManager.PlayerOneTurn && zonkManager.playerTwoDrank) return; 
+
+            if(turnManager.PlayerOneTurn && !zonkManager.playerOneDrank)
             {
                 zonkManager.PlayerOneZonkLevel += 50f; 
                 zonkManager.PlayerOneZonkLevel += zonkManager.ZonkAddition;  
+                zonkManager.playerOneDrank = true;
+               
             }
-            else if (!turnManager.PlayerOneTurn)
+            else if (!turnManager.PlayerOneTurn && !zonkManager.playerTwoDrank)
             {
                 zonkManager.PlayerTwoZonkLevel += 50f;
                 zonkManager.PlayerTwoZonkLevel += zonkManager.ZonkAddition;  
+                zonkManager.playerTwoDrank = true;
             }
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
@@ -160,6 +173,8 @@ public class Item : MonoBehaviour
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Left");
             zonkManager.PlayerTwoZonkLevel = zonkManager.PlayerTwoZonkLevel + ZonkEffect;
+            zonkManager.playerTwoDrank = false;
+            zonkManager.playerOneDrank = false;  
 
         }
         else if (itemName == "Player One" && zonkManager.canClick)
@@ -176,6 +191,8 @@ public class Item : MonoBehaviour
             playerAnimator.SetFloat("Strength", randPunch);
             playerAnimator.SetTrigger("Right");
             zonkManager.PlayerOneZonkLevel = zonkManager.PlayerOneZonkLevel + ZonkEffect;
+            zonkManager.playerOneDrank = false; 
+            zonkManager.playerTwoDrank = false;
 
         }
         else if (itemName == "Box TV")
