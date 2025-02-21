@@ -76,7 +76,11 @@ public class Item : MonoBehaviour
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
            
-            
+            if(turnManager.PlayerOneTurn){
+                playerAnimator.SetTrigger("LeftDrink");
+            } else {
+                playerAnimator.SetTrigger("RightDrink");
+            }
         }
         else if (itemName == "Trigger Sappy")
         {
@@ -99,7 +103,11 @@ public class Item : MonoBehaviour
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
     
-            
+            if(turnManager.PlayerOneTurn){
+                playerAnimator.SetTrigger("LeftDrink");
+            } else {
+                playerAnimator.SetTrigger("RightDrink");
+            }
         }
         else if (itemName == "Mighty Moonshine")
         {
@@ -123,6 +131,11 @@ public class Item : MonoBehaviour
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
          
+            if(turnManager.PlayerOneTurn){
+                playerAnimator.SetTrigger("LeftDrink");
+            } else {
+                playerAnimator.SetTrigger("RightDrink");
+            }
         }
         else if (itemName == "House Fire")
         {
@@ -146,7 +159,11 @@ public class Item : MonoBehaviour
             zonkManager.canClick = true;
             zonkManager.ZonkAddition = 0;
         
-
+            if(turnManager.PlayerOneTurn){
+                playerAnimator.SetTrigger("LeftDrink");
+            } else {
+                playerAnimator.SetTrigger("RightDrink");
+            }
         }
         else if(itemName == "Tarot Cards" && zonkManager.canClick)
         {
