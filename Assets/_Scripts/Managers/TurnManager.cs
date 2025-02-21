@@ -14,6 +14,8 @@ public class TurnManager : MonoBehaviour
 
     [HideInInspector]
     public bool punching = false; 
+    [HideInInspector]
+    public bool drinking = false; 
 
     void Start()
     {   
@@ -30,7 +32,7 @@ public class TurnManager : MonoBehaviour
 
     private void UpdateCameraState()
     {
-        if(!punching)
+        if(!punching && !drinking)
         {
             PlayerOneCamera.SetActive(PlayerOneTurn);
             PlayerTwoCamera.SetActive(!PlayerOneTurn);
@@ -41,8 +43,12 @@ public class TurnManager : MonoBehaviour
         {
             PlayerOneCamera.SetActive(false);
             PlayerTwoCamera.SetActive(false);
-            LeftPunchCam.SetActive(PlayerOneTurn);
-            RightPunchCam.SetActive(!PlayerOneTurn);
+            
+            if(!drinking)
+            {
+                LeftPunchCam.SetActive(PlayerOneTurn);
+                RightPunchCam.SetActive(!PlayerOneTurn);
+            }
         }        
     }
 }
