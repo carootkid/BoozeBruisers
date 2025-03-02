@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 555434432}
   m_Layer: 5
   m_Name: FadeScreen
-  m_TagString: Untagged
+  m_TagString: FadeScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5900,6 +5900,7 @@ MonoBehaviour:
   LeftPunchCam: {fileID: 2067159691}
   RightPunchCam: {fileID: 118402877}
   punching: 0
+  drinking: 0
 --- !u!114 &1537118139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6032,7 +6033,7 @@ MonoBehaviour:
     goodCard: 1
     calculatedWeight: 0
     playerAnimator: {fileID: 0}
-    CardIsDone: 0
+    CardIsDone: 1
   - cardName: The Middle Finger
     rarityWeight: 0
     cardPrefab: {fileID: 8346213286722073002, guid: cf82477945f500945932305741685327,
@@ -6332,17 +6333,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0893307
+      value: 2.3754094
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.0893307
+      value: 2.2600238
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.937342
+      value: 3.5490956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7924dc57fa1b33b4bacb854f5fb732db,
         type: 3}
@@ -14748,7 +14749,7 @@ PrefabInstance:
     - target: {fileID: 7628393215169890449, guid: 47dc0b4f4bc6af9479157c473ea000c6,
         type: 3}
       propertyPath: m_Volume
-      value: 0.665
+      value: 0.315
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

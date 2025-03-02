@@ -13,7 +13,6 @@ public class Card
     [HideInInspector]
     public int calculatedWeight;
 
-
     private ZonkManager zonkManager;
     private TurnManager turnManager;
     private PlayerManager playerManager;
@@ -178,7 +177,19 @@ public class Card
             }
 
         }
-        else if (cardName == "")
+        else if (cardName == "The Haunted")
+        {
+
+        }
+        else if (cardName == "Big Boned")//lesszon
+        {
+            zonkManager.ZonkAddition = -20f;
+        }
+        else if (cardName == "The Middle Finger")
+        {
+            
+        }
+        else if (cardName == "Iron Body")
         {
 
         }
